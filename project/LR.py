@@ -14,8 +14,8 @@ y = y_train.flatten()
 yt = y_test.flatten()
 
 # 使用线性回归进行训练
-logger.info('start training the model')
-lr = LogisticRegression(solver='sag', random_state=4, verbose=1, max_iter=200)
+logger.info('start training the model wit max_iter=500')
+lr = LogisticRegression(solver='sag', random_state=4, verbose=1, max_iter=500)
 lr.fit(X, y)
 logger.info('training finished')
 
