@@ -30,7 +30,7 @@ lr.fit(X, y)
 
 得到运行结果如下：
 
-![](..\image\大作业4.png)
+![](image\大作业4.png)
 
 在27次迭代后模型收敛，准确度大约在40%左右
 
@@ -84,7 +84,7 @@ logger.info('Start choose parameters')
 
 经过测试，C取1.5、gamma取0.01，采用高斯核能够得到较好的训练结果：
 
-![](..\image\大作业1.png)
+![](image\大作业1.png)
 
 接下来，使用选取的参数进行训练：
 
@@ -108,7 +108,7 @@ logger.info(f'测试集准确度: {test_accuracy}')
 
 训练结果如下：
 
-![](..\image\大作业2.png)
+![](image\大作业2.png)
 
 
 
@@ -200,7 +200,7 @@ class ResNet18(Model):
 
 在10个epoch之后，训练结果如下所示：
 
-![](..\image\大作业3.png)
+![](image\大作业3.png)
 
 通过以下代码绘制出ACC和LOSS曲线：
 
