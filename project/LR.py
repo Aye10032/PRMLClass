@@ -1,5 +1,6 @@
 from keras.datasets import cifar10
 from loguru import logger
+from sklearn.decomposition import PCA
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 
@@ -13,13 +14,16 @@ Xt = x_test.reshape(10000, 3 * 32 * 32)
 y = y_train.flatten()
 yt = y_test.flatten()
 
-# 使用线性回归进行训练
-logger.info('start training the model wit max_iter=500')
-lr = LogisticRegression(solver='sag', random_state=4, verbose=1, max_iter=500)
+logger.info('Start PCA')
+pca = PCA(n_components=0.95)
+X = pca.fit_transform(X)
+Xt = pca.transform(Xt)
+
+logger.info(f'start training the model')
+lr = LogisticRegression(solver='sag', random_state=4, verbose=1)
 lr.fit(X, y)
 logger.info('training finished')
 
-# 计算ACC
 y_pred_train = lr.predict(X)
 y_pred_test = lr.predict(Xt)
 
